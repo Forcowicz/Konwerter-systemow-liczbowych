@@ -5,6 +5,8 @@ const elements = document.querySelectorAll('.selection-element');
 const label = document.getElementById('inputLabel');
 const input = document.getElementById('input');
 
+input.disabled = true;
+
 elements.forEach(elementManipulator);
 
 function elementManipulator(item) {
