@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Konwerter systemów liczbowych</title>
+    <meta name="author" content="Marek Żywar">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <section class="page-content">
+        <div class="heading">
+            <h1>Konwerter systemów liczbowych</h1>
+        </div>
+        <div class="content-left">
+            <div class="selection">
+                <span class="selection-element" id="selection1">BIN</span>
+                <span class="selection-element" id="selection2">OCT</span>
+                <span class="selection-element" id="selection3">DEX</span>
+                <span class="selection-element" id="selection4">HEX</span>
+            </div>
+            <div class="input-group" id="group1">
+                <input type="text" placeholder="Wpisz liczbę" class="input" id="input1">
+                <label for="input1" class="label" id="inputLabel">Wpisz liczbę w systemie dwójkowym</label>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="output-group">
+                <span class="output">
+                    <small class="output-label">Dwójkowy (BIN)</small>
+                    <span>11111110101</span>
+                </span>
+                <span class="output">
+                    <small class="output-label">Ósemkowy (OCT)</small>
+                    <span>3765</span>
+                </span>
+                <span class="output">
+                    <small class="output-label">Dziesiętny (DEX)</small>
+                    <span>2037</span>
+                </span>
+                <span class="output">
+                    <small class="output-label">Szesnastkowy (HEX)</small>
+                    <span>7F5</span>
+                </span>
+            </div>
+        </div>
+    </section>
+    <script src="converter.js"></script>
+</main>
+</body>
+</html>
