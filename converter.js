@@ -6,6 +6,7 @@ const label = document.getElementById('inputLabel');
 const input = document.getElementById('input');
 
 input.disabled = true;
+const inputValue = input.value.trim();
 
 elements.forEach(elementManipulator);
 
@@ -18,7 +19,6 @@ function elementManipulator(item) {
         input.disabled = false;
         selected = item;
         selected.classList.add('selection-element-active');
-        console.log(selected);
 
         switch(selected) {
             case elements[0]:
@@ -37,5 +37,10 @@ function elementManipulator(item) {
                 label.textContent = 'Wybierz system';    
         }
     });
+}
+
+function toggleInputFocus() {
+    input.classList.toggle('input-focused');
+    label.classList.toggle('label-focused');
 }
 
