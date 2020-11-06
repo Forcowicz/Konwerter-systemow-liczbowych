@@ -3,15 +3,17 @@ let selected;
 
 const elements = document.querySelectorAll('.selection-element');
 const label = document.getElementById('inputLabel');
+const input = document.getElementById('input');
 
 elements.forEach(elementManipulator);
-
 
 function elementManipulator(item) {
     item.addEventListener('click', () => {
         if(selected) {
             selected.classList.remove('selection-element-active');
         }
+        input.placeholder = 'Wpisz liczbę';
+        input.disabled = false;
         selected = item;
         selected.classList.add('selection-element-active');
         console.log(selected);
