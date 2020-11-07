@@ -6,6 +6,7 @@ const label = document.getElementById('inputLabel');
 const input = document.getElementById('input');
 
 input.disabled = true;
+input.classList.add('input-disabled');
 const inputValue = input.value.trim();
 
 elements.forEach(elementManipulator);
@@ -17,6 +18,7 @@ function elementManipulator(item) {
         }
         input.placeholder = 'Wpisz liczbę';
         input.disabled = false;
+        input.classList.remove('input-disabled');
         selected = item;
         selected.classList.add('selection-element-active');
 

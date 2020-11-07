@@ -35,6 +35,67 @@ body {
     max-height: 100vh;
 }
 
+.visitor-alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--color-black), .5);
+    z-index: 2;
+    visibility: visible;
+    opacity: 1;
+    transition: all .15s;
+}
+
+.visitor-alert-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.visitor-alert-content {
+    width: 70rem;
+    height: auto;
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    background-color: #fff;
+    border-bottom: 3px solid red;
+    padding: 2rem;
+    text-align: center;
+}
+
+.visitor-alert h4 {
+    font-size: 2.4rem;
+    display: inline-block;
+    color: var(--color-grey);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.visitor-alert p {
+    font-size: 1.4rem;
+}
+
+.btn {
+    border: none;
+    background-color: var(--color-secondary);
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all .15s;
+    font-family: "Work Sans", sans-serif;
+}
+
+.btn:hover {
+    background-color: #4358ce;
+}
+
 .page-content {
     width: 75rem;
     height: 50rem;
@@ -96,7 +157,7 @@ body {
 }
 
 .input {
-    border-bottom: 3px solid grey;
+    border-bottom: 3px solid var(--color-primary);
     background-color: rgb(240, 240, 240);
     border-top: none;
     border-left: none;
@@ -107,11 +168,11 @@ body {
     transition: all .15s;
     font-family: inherit;
     font-size: 1.5rem;
-    color: var(--color-grey);
+    color: var(--color-primary);
 }
 
 .input::placeholder {
-    color: var(--color-grey);
+    color: var(--color-primary);
     font-size: inherit;
     font-family: inherit;
 }
@@ -120,6 +181,10 @@ body {
     border-bottom-color: var(--color-secondary);
     color: var(--color-secondary);
     background-color: rgb(247, 247, 247);
+}
+
+.input:focus::placeholder {
+    color: var(--color-secondary);
 }
 
 .input-focused {
@@ -132,6 +197,14 @@ body {
     transform: translateY(-3.4rem);
     opacity: 1;
     visibility: visible;
+}
+
+.input-disabled {
+    border-bottom-color: grey;
+}
+
+.input-disabled::placeholder {
+    color: var(--color-grey);
 }
 
 .label {
@@ -183,6 +256,7 @@ span.output > span {
     top: -2.25rem;
     left: 1rem;
     font-size: 1.3rem;
+    font-family: "Work Sans", sans-serif;
     color: var(--color-secondary);
 }
 
