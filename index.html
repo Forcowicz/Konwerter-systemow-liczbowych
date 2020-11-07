@@ -19,7 +19,7 @@
             <button class="btn" id="modalBtn">Rozumiem</button>
         </div>
     </div>
-    <script src="modal.js"></script>
+    <script src="alert.js"></script>
     <section class="page-content">
         <div class="heading">
             <h1>Konwerter systemów liczbowych</h1>
@@ -41,22 +41,45 @@
                 <span class="output">
                     <small class="output-label">Dwójkowy (BIN)</small>
                     <span>11111110101</span>
+                    <svg class="icon icon-output">
+                        <use xlink:href="icons/sprite.svg#copy"></use>
+                    </svg>
                 </span>
                 <span class="output">
                     <small class="output-label">Ósemkowy (OCT)</small>
                     <span>3765</span>
+                    <svg class="icon icon-output">
+                        <use xlink:href="icons/sprite.svg#copy"></use>
+                    </svg>
                 </span>
                 <span class="output">
                     <small class="output-label">Dziesiętny (DEX)</small>
                     <span>2037</span>
+                    <svg class="icon icon-output">
+                        <use xlink:href="icons/sprite.svg#copy"></use>
+                    </svg>
                 </span>
                 <span class="output">
                     <small class="output-label">Szesnastkowy (HEX)</small>
                     <span>7F5</span>
+                    <svg class="icon icon-output">
+                        <use xlink:href="icons/sprite.svg#copy"></use>
+                    </svg>
                 </span>
             </div>
         </div>
     </section>
+    <footer>
+        <btn class="footer-link" id="creditsBtnOpen">Credits</btn>
+    </footer>
+    <section class="credits credits-hidden" id="creditsModal">
+        <div class="credits-content">
+            <span class="content-close" id="creditsBtnClose">&times;</span>
+            <h4>Autor: Marek Żywar (Forcowicz)</h4>
+            <p>Ikony stworzone przez: Gregor Cresnar dla Flaticon</p>
+        </div>
+    </section>
+    <script src="modal.js"></script>
     <script src="converter.js"></script>
 </main>
 </body>

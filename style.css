@@ -106,7 +106,7 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 1rem 2rem rgba(black, .8);
+    box-shadow: 0 1rem 1rem rgba(black, .8);
     padding: 2rem;
     display: flex;
 }
@@ -279,6 +279,7 @@ span.output > span {
     text-align: center;
     color: #fff;
     cursor: pointer;
+    backface-visibility: hidden;
     box-shadow: 0 .5rem 1rem rgba(var(--color-black), .25);
     transition: all .15s;
 }
@@ -289,4 +290,114 @@ span.output > span {
 
 .selection-element-active {
     background-color: var(--color-primary);
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-grey);
+    transition: all .15s;
+    cursor: pointer;
+}
+
+.icon:hover {
+    fill: var(--color-secondary);
+}
+
+.icon-output {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 2rem;
+}
+
+.footer-link, .footer-link:link, .footer-link:visited {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #fff;
+    transition: all .15s;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+}
+
+.footer-link:hover {
+    color: lightskyblue;
+}
+
+.credits {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(var(--color-black), .75);
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition: all .15s;
+}
+
+.credits-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.credits-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 15rem;
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(var(--color-black), .25);
+    padding: 2rem;
+    color: var(--color-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits-content > h4 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: inherit;
+    display: inline-block;
+    margin: 0;
+}
+
+.credits-content > p {
+    font-size: 1.6rem;
+    color: inherit;
+    margin: 0;
+}
+
+.content-close {
+    position: absolute;
+    top: -.8rem;
+    right: .5rem;
+    font-size: 3rem;
+    cursor: pointer;
+    color: inherit;
+    transition: all .15s;
+}
+
+.content-close:hover {
+    color: var(--color-secondary);
 }
