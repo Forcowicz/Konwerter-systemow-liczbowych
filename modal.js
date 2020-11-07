@@ -5,7 +5,7 @@ if (cookie === null) {
     modal.classList.toggle('visitor-alert-hidden');
     btn.addEventListener('click', () => {
         modal.classList.toggle('visitor-alert-hidden');
-        document.cookie = "Visited=true;expires=" + setExpirationDate(); + ";path=/";
+        document.cookie = `Visited=true;expires=${setExpirationDate()};path=/`;
     });
 }
 
