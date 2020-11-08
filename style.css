@@ -35,6 +35,18 @@ body {
     max-height: 100vh;
 }
 
+a, a:link, a:visited {
+    text-decoration: none;
+    color: var(--color-secondary);
+    font-size: inherit;
+    font-weight: inherit;
+    transition: color .15s;
+}
+
+a:hover, a:link:hover, a:visited:hover {
+    color: lightskyblue;
+}
+
 .visitor-alert {
     position: absolute;
     top: 0;
@@ -361,7 +373,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     width: auto;
-    height: 15rem;
+    height: auto;
     background-color: #fff;
     border-radius: 3px;
     overflow: hidden;
@@ -390,8 +402,8 @@ footer {
 
 .content-close {
     position: absolute;
-    top: -.8rem;
-    right: .5rem;
+    top: -.4rem;
+    right: 1rem;
     font-size: 3rem;
     cursor: pointer;
     color: inherit;
@@ -400,4 +412,46 @@ footer {
 
 .content-close:hover {
     color: var(--color-secondary);
+}
+
+figure {
+    display: block;
+    height: 25rem;
+    width: 25rem;
+    overflow: hidden;
+    border-radius: 300px;
+    position: relative;
+}
+
+figure > img {
+    transform: scale(1.1);
+    width: 100%;
+    height: 100%;
+    transition: all .15s;
+    backface-visibility: hidden;
+}
+
+figure:hover > img {
+    filter: blur(4px);
+}
+
+figure > small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 150%);
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .15s ease-out;
+    backface-visibility: hidden;
+    cursor: default;
+}
+
+figure:hover > small {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
 }
