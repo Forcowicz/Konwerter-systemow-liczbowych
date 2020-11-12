@@ -47,6 +47,18 @@ a:hover, a:link:hover, a:visited:hover {
     color: lightskyblue;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: none;
+  }
+
 .visitor-alert {
     position: absolute;
     top: 0;
@@ -219,6 +231,26 @@ a:hover, a:link:hover, a:visited:hover {
     color: var(--color-grey);
 }
 
+.input-error {
+    border-bottom-color: rgb(221, 28, 28);
+    background-color: rgba(221, 28, 28, .2);
+    color: rgb(221, 28, 28);
+}
+
+.input-error::placeholder {
+    color: rgb(221, 28, 28);
+}
+
+.input-error:focus {
+    color: rgb(221, 28, 28);
+    border-bottom-color: rgb(221, 28, 28);
+    background-color: rgba(221, 28, 28, .2);
+}
+
+.input-error:focus::placeholder {
+    color: rgb(221, 28, 28);
+}
+
 .label {
     position: absolute;
     top: 1.4rem;
@@ -234,6 +266,10 @@ a:hover, a:link:hover, a:visited:hover {
     transform: translateY(-3.4rem);
     opacity: 1;
     pointer-events: initial;
+}
+
+.label-error {
+    color: rgb(221, 28, 28);
 }
 
 span.output {
