@@ -31,14 +31,14 @@ function languageCondition($argumentTrue, $argumentFalse) {
 
     if(isset($_GET['lang'])) {
         if($_GET['lang'] === 'en') {
-            include_once("includes/languages/index_en.php");
+            include_once("includes/languages/index_en.html");
         } else if ($_GET['lang'] === 'pl') {
-            include_once("includes/languages/index_pl.php");
+            include_once("includes/languages/index_pl.html");
         }
     } else if ($browserLanguage === 'pl') {
-        include_once("includes/languages/index_pl.php");
+        include_once("includes/languages/index_pl.html");
     } else {
-        include_once("includes/languages/index_en.php");
+        include_once("includes/languages/index_en.html");
     }
 
     ?>
