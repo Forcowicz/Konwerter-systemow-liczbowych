@@ -6,6 +6,9 @@ if (cookie === null) {
     btn.addEventListener('click', () => {
         modal.classList.toggle('visitor-alert-hidden');
         document.cookie = `Visited=true;expires=${setExpirationDate()};path=/`;
+        setTimeout(() => {
+            modal.remove();
+        }, 1000);
     });
 }
 

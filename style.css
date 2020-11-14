@@ -43,10 +43,6 @@ a, a:link, a:visited {
     transition: color .15s;
 }
 
-a:hover, a:link:hover, a:visited:hover {
-    color: lightskyblue;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -57,7 +53,14 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
     appearance: none;
-  }
+}
+
+h5 {
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--color-grey);
+    font-size: 2.4rem;
+}
 
 .visitor-alert {
     position: absolute;
@@ -187,7 +190,6 @@ input[type=number] {
     border-left: none;
     border-right: none;
     padding: 1rem 1rem .75rem 1rem;
-    font-size: 1.6rem;
     width: 100%;
     transition: all .15s;
     font-family: inherit;
@@ -373,13 +375,23 @@ footer {
 
 .footer-link, .footer-link:link, .footer-link:visited {
     text-decoration: none;
+    background-color: unset;
     display: inline-block;
     font-size: 1.4rem;
     color: #fff;
     transition: all .15s;
     border: none;
-    background-color: none;
     cursor: pointer;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+
+.footer-link:hover, .footer-link:link:hover, .footer-link:visited:hover {
+    color: lightskyblue;
+}
+
+.footer-link:not(:last-child) {
+    margin-right: 2rem;
 }
 
 .footer-link:hover {
@@ -493,4 +505,66 @@ figure:hover > small {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%);
+}
+
+.system-alert-block {
+    display: block;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -60%);
+    transition: all .15s;
+}
+
+.system-alert-block-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.languages {
+    position: absolute;
+    bottom: 1rem;
+    left: 10rem;
+    background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 82%, transparent 82%);
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .15s;
+}
+
+.languages-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.languages > ul {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    transition: all .15s;
+}
+
+.languages li {
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.languages a, a:link, a:visited {
+    text-decoration: none;
+    display: block;
+    color: var(--color-grey);
+    padding: 1rem 4rem;
+}
+
+li:hover {
+    background-color: lightgrey;
 }
