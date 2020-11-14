@@ -54,8 +54,8 @@
     <button class="footer-link" id="languagesBtnOpen">Lang</button>
     <div class="languages" id="languagesPopup">
         <ul>
-            <li><a href="index.php?lang=en">English</a></li>
-            <li><a href="index.php?lang=pl">Polski</a></li>
+            <li><a href="index.php?lang=en" class="languages-link">English</a></li>
+            <li><a href="index.php?lang=pl" class="languages-link">Polski</a></li>
         </ul>
     </div>
 </footer>
@@ -67,6 +67,7 @@
             <small>Forcowicz</small>
         </figure>
         <h4>Autor: Marek Żywar (Forcowicz)</h4>
+        <p class="credits-icon-author">Ikony stworzone przez <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> dla <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
     </div>
 </section>
 <script src="includes/js/modal.js"></script>

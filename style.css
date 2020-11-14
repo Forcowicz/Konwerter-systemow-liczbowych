@@ -276,7 +276,7 @@ h5 {
 
 span.output {
     position: relative;
-    width: 100%;
+    width: 35.5rem;
     display: block;
     padding: 1rem;
     background-color: rgb(240, 240, 240);
@@ -291,6 +291,10 @@ span.output:not(:first-child) {
 span.output > span {
     color: var(--color-primary);
     letter-spacing: 2px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
 }
 
 .output-group {
@@ -403,6 +407,7 @@ footer {
     top: 0;
     left: 0;
     background-color: rgba(var(--color-black), .75);
+    z-index: 10;
     width: 100%;
     height: 100%;
     visibility: visible;
@@ -462,16 +467,33 @@ footer {
     color: var(--color-secondary);
 }
 
+.credits-icon-author {
+    text-align: center;
+    display: inline-block;
+    font-size: 1.6rem;
+}
+
+.credits-icon-author a, a:link, a:visited {
+    color: var(--color-secondary);
+}
+
+.credits-icon-author a:hover {
+    color: deepskyblue;
+}
+
 figure {
     display: block;
     height: 25rem;
     width: 25rem;
     overflow: hidden;
-    float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    border-radius: 50%;
     position: relative;
+}
+
+figure::after {
+    clear: both;
+    display: table;
+    content: "";
 }
 
 figure > img {
@@ -558,7 +580,7 @@ figure:hover > small {
     text-align: center;
 }
 
-.languages a, a:link, a:visited {
+.languages-link:link, .languages-link:visited {
     text-decoration: none;
     display: block;
     color: var(--color-grey);

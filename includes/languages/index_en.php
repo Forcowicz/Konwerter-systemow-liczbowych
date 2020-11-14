@@ -1,12 +1,3 @@
-<?php
-    if(isset($_GET['lang'])) {
-        if($_GET['lang'] === 'pl') {
-            echo "<script>document.documentElement.lang = 'pl'</script>";
-        } else if ($_GET['lang'] === 'en') {
-            echo "<script>document.documentElement.lang = 'en'</script>";
-        }
-    }
-?>
 <main>
 <div class="visitor-alert visitor-alert-hidden" id="modal">
     <div class="visitor-alert-content">
@@ -63,8 +54,8 @@
     <button class="footer-link" id="languagesBtnOpen">Lang</button>
     <div class="languages" id="languagesPopup">
         <ul>
-            <li><a href="index.php?lang=en">English</a></li>
-            <li><a href="index.php?lang=pl">Polski</a></li>
+            <li><a href="index.php?lang=en" class="languages-link">English</a></li>
+            <li><a href="index.php?lang=pl" class="languages-link">Polski</a></li>
         </ul>
     </div>
 </footer>
@@ -76,6 +67,7 @@
             <small>Forcowicz</small>
         </figure>
         <h4>Author: Marek Żywar (Forcowicz)</h4>
+        <p class="credits-icon-author">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> for <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
     </div>
 </section>
 <script src="includes/js/modal.js"></script>
