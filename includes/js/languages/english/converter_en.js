@@ -7,7 +7,7 @@ const input = document.getElementById('input');
 const systemAlert = document.getElementById('system-alert');
 const output1 = document.getElementById('outputBin');
 const output2 = document.getElementById('outputOct');
-const output3 = document.getElementById('outputDex');
+const output3 = document.getElementById('outputDec');
 const output4 = document.getElementById('outputHex');
 
 input.disabled = true;
