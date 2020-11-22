@@ -27,7 +27,7 @@ function systemSelection(item) {
 		output3.textContent = 'Enter a number';
 		output4.textContent = 'Enter a number';
 		input.value = '';
-	}
+	};
 
 	item.addEventListener('click', () => {
 		if (selected) {
@@ -88,13 +88,24 @@ function checkInputValue() {
 		label.textContent = labelText;
 		accepted = true;
 	};
-	const setDefaultOutput = output => {
-		if (!inputValue) {
-			output.textContent = 'Enter a number';
-		} else if (accepted) {
-			output.textContent = inputValue.toUpperCase();
+	const basicReset = () => {
+		output1.textContent = 'Enter a number';
+		output2.textContent = 'Enter a number';
+		output3.textContent = 'Enter a number';
+		output4.textContent = 'Enter a number';
+	};
+	const setDefaultOutput = (outputs) => {
+		if (inputValue) {
+			if (accepted) {
+				output1.textContent = outputs.output1;
+				output2.textContent = outputs.output2;
+				output3.textContent = outputs.output3;
+				output4.textContent = outputs.output4;
+			}
+		} else {
+			basicReset();
 		}
-	}
+	};
 
 	switch (selected) {
 		case elements[0]:
@@ -102,34 +113,74 @@ function checkInputValue() {
 				addInputError();
 			} else {
 				removeInputError();
-				setDefaultOutput(output1);
+				setDefaultOutput(convert(inputValue, 'bin'));
 			}
 			break;
 		case elements[1]:
-			if (!inputValue.match('^[0-7]*$')) {
-				addInputError();
-			} else {
+			if (inputValue.match('^[0-7]*$')) {
 				removeInputError();
-				setDefaultOutput(output2);
+				setDefaultOutput(output2, convert(inputValue, 'oct'));
+			} else {
+				addInputError();
 			}
 			break;
 		case elements[2]:
-			if (!inputValue.match('^[0-9]*$')) {
-				addInputError();
-			} else {
+			if (inputValue.match('^[0-9]*$')) {
 				removeInputError();
-				setDefaultOutput(output3);
+				setDefaultOutput(output3, convert(inputValue, 'dex'));
+			} else {
+				addInputError();
 			}
 			break;
 		case elements[3]:
-			if (!inputValue.match('^[0-9a-fA-F]*$')) {
-				addInputError();
-			} else {
+			if (inputValue.match('^[0-9a-fA-F]*$')) {
 				removeInputError();
-				setDefaultOutput(output4);
+				setDefaultOutput(output4, convert(inputValue, 'hex'));
+			} else {
+				addInputError();
 			}
 			break;
 		default:
 			removeInputError();
 	}
+}
+
+function convert(input, system) {
+	const str = input.toUpperCase();
+	let inputArray = str.split("");
+	let outputArray = [];
+	let outputNumber;
+
+	if(system === 'bin') {
+		const localArray = inputArray.reverse();
+		for(let i = 0; i <= localArray.length; i++) {
+			if(localArray[i] === '1') {
+				outputArray.push(2 ** i);
+			}
+			outputNumber = 0;
+
+			for(let i = 0; i < outputArray.length; i++) {
+				outputNumber += outputArray[i];
+			}
+		}
+		return {output1: str, output2: 'Nothing', output3: outputNumber, output4: 'Nothing'};
+	}
+
+	// switch(system) {
+	// 	case 'bin':
+	// 		convertedArray = str.split("");
+	// 		break;
+	// 	case 'oct':
+	// 		for(let i = 0; i < str.length; i += 3) {
+	// 			convertedArray.push(str.substr(i, 3));
+	// 		}
+	// 		break;
+	// 	case 'hex':
+	// 		for(let i = 0; i < str.length; i += 4) {
+	// 			convertedArray.push(str.substr(i, 4));
+	// 		}
+	// 		break;
+	// 	case 'dex':
+	//
+	// }
 }
