@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
 *, *::before, *::after {
     box-sizing: inherit;
 }
@@ -289,6 +291,7 @@ span.output:not(:first-child) {
 }
 
 span.output > span {
+    font-family: 'Rubik', sans-serif;
     color: var(--color-primary);
     letter-spacing: 2px;
     width: 100%;
