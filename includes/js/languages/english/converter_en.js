@@ -119,7 +119,7 @@ function checkInputValue() {
 		case elements[1]:
 			if (inputValue.match('^[0-7]*$')) {
 				removeInputError();
-				setDefaultOutput(output2, convert(inputValue, 'oct'));
+				setDefaultOutput(convert(inputValue, 'oct'));
 			} else {
 				addInputError();
 			}
@@ -135,7 +135,7 @@ function checkInputValue() {
 		case elements[3]:
 			if (inputValue.match('^[0-9a-fA-F]*$')) {
 				removeInputError();
-				setDefaultOutput(output4, convert(inputValue, 'hex'));
+				setDefaultOutput(convert(inputValue, 'hex'));
 			} else {
 				addInputError();
 			}
@@ -164,6 +164,45 @@ function convert(input, system) {
 			}
 		}
 		return {output1: str, output2: 'Nothing', output3: outputNumber, output4: 'Nothing'};
+
+	} else if(system === 'oct') {
+		const localArray = inputArray.reverse();
+		for(let i = 0; i < localArray.length; i++) {
+			outputArray.push(Number(localArray[i]) * (8 ** i));
+			outputNumber = 0;
+
+			for(let i = 0; i < outputArray.length; i++) {
+				outputNumber += outputArray[i];
+			}
+		}
+		return {output1: 'Nothing', output2: str, output3: outputNumber, output4: 'Nothing'};
+
+	} else if(system === 'hex') {
+		const localArray = inputArray.reverse();
+		for(let i = 0; i < localArray.length; i++) {
+
+			if(localArray.includes('A')) {
+				localArray[localArray.indexOf('A')] = '10';
+			} if(localArray.includes('B')) {
+				localArray[localArray.indexOf('B')] = '11';
+			} if(localArray.includes('C')) {
+				localArray[localArray.indexOf('C')] = '12';
+			} if(localArray.includes('D')) {
+				localArray[localArray.indexOf('D')] = '13';
+			} if(localArray.includes('E')) {
+				localArray[localArray.indexOf('E')] = '14';
+			} if(localArray.includes('F')) {
+				localArray[localArray.indexOf('F')] = '15';
+			}
+			outputArray.push(Number(localArray[i]) * (16 ** i));
+
+			outputNumber = 0;
+
+			for(let i = 0; i < outputArray.length; i ++) {
+				outputNumber += outputArray[i];
+			}
+		}
+		return {output1: 'Nothing', output2: 'Nothing', output3: outputNumber, output4: str} 
 	}
 
 	// switch(system) {
