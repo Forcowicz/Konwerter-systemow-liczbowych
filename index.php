@@ -40,6 +40,7 @@ function languageCondition($argumentTrue, $argumentFalse) {
         include_once("includes/languages/index_pl.html");
     } else {
         include_once("includes/languages/index_en.html");
+        echo "<script>document.documentElement.lang = 'en'; document.title = 'Number systems converter';</script>";
     }
 
     ?>
