@@ -1,0 +1,118 @@
+.content {
+  width: 75rem;
+  height: 50rem;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1rem 1.5rem rgba(var(--color-black), .25);
+  padding: 2rem;
+  display: flex;
+
+  @include respond(phone) {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+
+.heading {
+  text-align: center;
+  display: block;
+  margin-bottom: 2rem;
+  width: 80%;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -5%);
+
+  @include respond(phone) {
+      margin-bottom: 3rem;
+  }
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 2rem;
+
+      &__link {
+        &, &:link, &:visited {
+          text-decoration: none;
+          background-color: unset;
+          display: inline-block;
+          font-size: 1.4rem;
+          color: #fff;
+          transition: all .15s;
+          border: none;
+          cursor: pointer;
+          backface-visibility: hidden;
+          z-index: 2;
+
+            &:hover {
+              color: lightskyblue;
+            }
+        }
+
+          &:not(:last-child) {
+            margin-right: 2rem;
+          }
+      }
+
+      &__languages {
+        position: absolute;
+        bottom: 1rem;
+        left: 10rem;
+        background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 82%, transparent 82%);
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .15s;
+
+          &--visible {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          &__list {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            transition: all .15s;
+          }
+
+          &__item {
+            font-size: 1.6rem;
+            cursor: pointer;
+            text-align: center;
+
+              &:hover {
+                background-color: lightgrey;
+              }
+          }
+
+          &__link {
+            &, &:link, &:visited {
+              text-decoration: none;
+              display: block;
+              color: var(--color-grey);
+              padding: 1rem 4rem;
+            }
+          }
+      }
+}

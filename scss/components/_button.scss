@@ -1,0 +1,16 @@
+.btn {
+    border: none;
+    background-color: var(--color-secondary);
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all .15s;
+    font-family: "Work Sans", sans-serif;
+
+        &:hover {
+            background-color: #4358ce;
+        }
+}

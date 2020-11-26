@@ -1,7 +1,7 @@
 'use strict';
 let selected;
 
-const elements = document.querySelectorAll('.selection-element');
+const elements = document.querySelectorAll('.selection__element');
 const label = document.getElementById('inputLabel');
 const input = document.getElementById('input');
 const systemAlert = document.getElementById('system-alert');
@@ -11,7 +11,7 @@ const output3 = document.getElementById('outputDec');
 const output4 = document.getElementById('outputHex');
 
 input.disabled = true;
-input.classList.add('input-disabled');
+input.classList.add('input--disabled');
 
 input.addEventListener('keyup', checkInputValue);
 input.addEventListener('focusout', checkInputValue);
@@ -31,11 +31,11 @@ function systemSelection(item) {
 
 	item.addEventListener('click', () => {
 		if (selected) {
-			selected.classList.remove('selection-element-active');
+			selected.classList.remove('selection__element-active');
 		}
 
 		if (systemAlert) {
-			systemAlert.classList.add('system-alert-block-hidden');
+			systemAlert.classList.add('system-alert--hidden');
 			setTimeout(() => {
 				systemAlert.remove();
 			}, 1000);
@@ -43,9 +43,9 @@ function systemSelection(item) {
 
 		input.placeholder = 'Wpisz liczbę';
 		input.disabled = false;
-		input.classList.remove('input-disabled');
+		input.classList.remove('input--disabled');
 		selected = item;
-		selected.classList.add('selection-element-active');
+		selected.classList.add('selection__element-active');
 
 		switch (selected) {
 			case elements[0]:
@@ -78,13 +78,13 @@ function checkInputValue() {
 	let accepted;
 	const inputValue = input.value.trim();
 	const addInputError = () => {
-		input.classList.add('input-error');
-		label.classList.add('label-error');
+		input.classList.add('input--error');
+		label.classList.add('label--error');
 		label.innerHTML = 'Wpisz liczbę w <b>prawidłowym formacie!</b>';
 	};
 	const removeInputError = () => {
-		input.classList.remove('input-error');
-		label.classList.remove('label-error');
+		input.classList.remove('input--error');
+		label.classList.remove('label--error');
 		label.textContent = labelText;
 		accepted = true;
 	};

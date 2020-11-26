@@ -1,0 +1,11 @@
+.icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-grey);
+    transition: all .15s;
+    cursor: pointer;
+
+        &:hover {
+            fill: var(--color-primary);
+        }
+}

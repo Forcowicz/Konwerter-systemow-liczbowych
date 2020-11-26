@@ -2,9 +2,9 @@ const modal = document.getElementById('modal');
 const btn = document.getElementById('modalBtn');
 const cookie = getCookie("Visited");
 if (cookie === null) {
-    modal.classList.toggle('visitor-alert-hidden');
+    modal.classList.toggle('visitor-alert--hidden');
     btn.addEventListener('click', () => {
-        modal.classList.toggle('visitor-alert-hidden');
+        modal.classList.toggle('visitor-alert--hidden');
         document.cookie = `Visited=true;expires=${setExpirationDate()};path=/`;
         setTimeout(() => {
             modal.remove();

@@ -1,0 +1,73 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
+.row {
+  max-width: $grid-width; // Jeżeli nie ma 1140px na ekranie, to wypełni 100% miejsca, które ma
+  margin: 0 auto; // Wyśrodkowanie
+
+  &:not(:last-child) { // Wybiera wszystko, oprócz last child
+    margin-bottom: $gutter-vertical;
+  }
+
+  &--small-margin {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &--background {
+    background-color: rgba(#fff, .85);
+  }
+
+  &--padding {
+    padding: 2rem 5rem;
+  }
+
+  @include clearfix;
+
+  [class^="col-"] { // Wybiera wszystkie elementy, gdzie klasa zaczyna się "col-"
+    float: left;
+    position: relative;
+    height: 100%;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2); // Oblicza, kiedy strona się renderuje
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+  }
+
+  .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * (#{$gutter-horizontal}));
+  }
+
+}

@@ -1,0 +1,102 @@
+.input {
+    border-bottom: 3px solid var(--color-primary);
+    background-color: rgb(240, 240, 240);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 1rem 1rem .75rem 1rem;
+    width: 100%;
+    transition: all .15s;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+
+        &::placeholder {
+            color: var(--color-primary);
+            font-size: inherit;
+            font-family: inherit;
+        }
+
+        &:focus {
+            border-bottom-color: var(--color-secondary);
+            color: var(--color-secondary);
+            background-color: rgb(247, 247, 247);
+            
+                &::placeholder {
+                    color: var(--color-secondary);
+                }
+
+                & + .input__label {
+                    transform: translateY(-3.4rem);
+                    opacity: 1;
+                    visibility: visible;
+                }
+        }
+
+        &--focused {
+            border-bottom-color: var(--color-secondary);
+            color: var(--color-secondary);
+            background-color: rgb(247, 247, 247);
+        }
+
+        &--disabled {
+            border-bottom-color: grey;
+
+                &::placeholder {
+                    color: var(--color-grey);
+                }
+        }
+
+        &--error {
+            border-bottom-color: rgb(221, 28, 28);
+            background-color: rgba(221, 28, 28, .2);
+            color: rgb(221, 28, 28);
+
+                &::placeholder {
+                    color: rgb(221, 28, 28);
+                }
+
+                &:focus {
+                    color: rgb(221, 28, 28);
+                    border-bottom-color: rgb(221, 28, 28);
+                    background-color: rgba(221, 28, 28, .2);
+
+                        &::placeholder {
+                            color: rgb(221, 28, 28);
+                        }
+                }
+        }
+
+    
+        &__label {
+            position: absolute;
+            top: 1.4rem;
+            left: 1.2rem;
+            font-size: 1.2rem;
+            transition: all .15s;
+            color: var(--color-secondary);
+            opacity: 0;
+            pointer-events: none;
+
+                &--focused {
+                    transform: translateY(-3.4rem);
+                    opacity: 1;
+                    pointer-events: initial;
+                }
+
+                &--error {
+                    color: rgb(221, 28, 28);
+                }
+        }
+
+        &__group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            width: 30rem;
+        }
+}
+
+#group1 {
+    top: 10rem;
+    margin: 3rem auto 0 auto;
+}

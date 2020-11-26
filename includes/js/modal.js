@@ -3,11 +3,11 @@ const creditsModalBtnOpen = document.getElementById('creditsBtnOpen');
 const creditsModalBtnClose = document.getElementById('creditsBtnClose');
 
 creditsModalBtnOpen.addEventListener('click', () => {
-    creditsModal.classList.toggle('credits-hidden');
+    creditsModal.classList.toggle('credits--hidden');
 });
 
 creditsModalBtnClose.addEventListener('click', () => {
-    creditsModal.classList.toggle('credits-hidden');
+    creditsModal.classList.toggle('credits--hidden');
 });
 
 const languagesModalBtnOpen = document.getElementById('languagesBtnOpen');
@@ -20,17 +20,17 @@ if (document.documentElement.lang === 'pl') {
 }
 
 languagesModalBtnOpen.addEventListener('mouseenter', () => {
-    languagesPopup.className = "languages languages-visible";
+    languagesPopup.className = "footer__languages footer__languages--visible";
 });
 
 languagesModalBtnOpen.addEventListener('mouseleave', () => {
-    languagesPopup.className = "languages";
+    languagesPopup.className = "footer__languages";
 });
 
 languagesPopup.addEventListener('mouseenter', () => {
-   languagesPopup.className = "languages languages-visible";
+   languagesPopup.className = "footer__languages footer__languages--visible";
 });
 
 languagesPopup.addEventListener('mouseleave', () => {
-    languagesPopup.className = "languages";
+    languagesPopup.className = "footer__languages";
 });

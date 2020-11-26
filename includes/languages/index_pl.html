@@ -1,73 +1,75 @@
 <main>
-<div class="visitor-alert visitor-alert-hidden" id="modal">
-    <div class="visitor-alert-content">
-        <h4>Drogi użytkowniku!</h4>
-        <p>Projekt nie jest jeszcze ukończony i nie funkcjonuje prawidłowo. Obecny status prac można zobaczyć na GitHubie.</p>
-        <p>Repozytorium: <a href="https://github.com/Forcowicz/Konwerter-systemow-liczbowych">Kliknij, aby przejść na stronę GitHub.</a></p>
+<div class="visitor-alert visitor-alert--hidden" id="modal">
+    <div class="visitor-alert__content">
+        <h4 class="visitor-alert__heading">Drogi użytkowniku!</h4>
+        <p class="visitor-alert__paragraph">Projekt nie jest jeszcze ukończony i nie funkcjonuje prawidłowo. Obecny status prac można zobaczyć na GitHubie.</p>
+        <p class="visitor-alert__paragraph">Repozytorium: <a href="https://github.com/Forcowicz/Konwerter-systemow-liczbowych">Kliknij, aby przejść na stronę GitHub.</a></p>
         <button class="btn" id="modalBtn">Rozumiem</button>
     </div>
 </div>
 <script src="includes/js/alert.js"></script>
-<section class="page-content">
+<section class="content">
     <div class="heading">
         <h1>Konwerter systemów liczbowych</h1>
     </div>
-    <div class="content-left">
-        <div class="selection">
-            <span class="selection-element" id="selection1">BIN</span>
-            <span class="selection-element" id="selection2">OCT</span>
-            <span class="selection-element" id="selection3">DEC</span>
-            <span class="selection-element" id="selection4">HEX</span>
+    <div class="row">
+        <div class="col-1-of-2">
+            <div class="selection">
+                <span class="selection__element" id="selection1">BIN</span>
+                <span class="selection__element" id="selection2">OCT</span>
+                <span class="selection__element" id="selection3">DEC</span>
+                <span class="selection__element" id="selection4">HEX</span>
+            </div>
+            <div class="input__group" id="group1">
+                <input type="text" placeholder="Wybierz system" class="input" id="input">
+                <label for="input" class="input__label" id="inputLabel">Wpisz liczbę w systemie dwójkowym</label>
+            </div>
+            <div class="system-alert" id="system-alert">
+                <h5>Wybierz system</h5>
+            </div>
         </div>
-        <div class="input-group" id="group1">
-            <input type="text" placeholder="Wybierz system" class="input" id="input">
-            <label for="input" class="label" id="inputLabel">Wpisz liczbę w systemie dwójkowym</label>
-        </div>
-        <div class="system-alert-block" id="system-alert">
-            <h5>Wybierz system</h5>
-        </div>
-    </div>
-    <div class="content-right">
-        <div class="output-group">
+        <div class="col-1-of-2">
+            <div class="output__group">
                 <span class="output">
-                    <small class="output-label">Dwójkowy (BIN)</small>
+                    <small class="output__label">Dwójkowy (BIN)</small>
                     <span id="outputBin">Wpisz liczbę</span>
                 </span>
-            <span class="output">
-                    <small class="output-label">Ósemkowy (OCT)</small>
-                    <span id="outputOct">Wpisz liczbę</span>
-                </span>
-            <span class="output">
-                    <small class="output-label">Dziesiętny (DEC)</small>
-                    <span id="outputDec">Wpisz liczbę</span>
-                </span>
-            <span class="output">
-                    <small class="output-label">Szesnastkowy (HEX)</small>
-                    <span id="outputHex">Wpisz liczbę</span>
-                </span>
+                <span class="output">
+                        <small class="output__label">Ósemkowy (OCT)</small>
+                        <span id="outputOct">Wpisz liczbę</span>
+                    </span>
+                <span class="output">
+                        <small class="output__label">Dziesiętny (DEC)</small>
+                        <span id="outputDec">Wpisz liczbę</span>
+                    </span>
+                <span class="output">
+                        <small class="output__label">Szesnastkowy (HEX)</small>
+                        <span id="outputHex">Wpisz liczbę</span>
+                    </span>
+            </div>
         </div>
     </div>
 </section>
 </main>
-<footer>
-    <button class="footer-link" id="creditsBtnOpen">Credits</button>
-    <button class="footer-link" id="languagesBtnOpen">Lang</button>
-    <div class="languages" id="languagesPopup">
-        <ul>
-            <li><a href="index.php?lang=en" class="languages-link">English</a></li>
-            <li><a href="index.php?lang=pl" class="languages-link">Polski</a></li>
+<footer class="footer">
+    <button class="footer__link" id="creditsBtnOpen">Credits</button>
+    <button class="footer__link" id="languagesBtnOpen">Lang</button>
+    <div class="footer__languages" id="languagesPopup">
+        <ul class="footer__languages__list">
+            <li class="footer__languages__item"><a href="index.php?lang=en" class="footer__languages__link">English</a></li>
+            <li class="footer__languages__item"><a href="index.php?lang=pl" class="footer__languages__link">Polski</a></li>
         </ul>
     </div>
 </footer>
-<section class="credits credits-hidden" id="creditsModal">
-    <div class="credits-content">
-        <span class="content-close" id="creditsBtnClose">&times;</span>
-        <figure>
-            <img src="images/profile.jpg" alt="Profile picture">
-            <small>Forcowicz</small>
+<section class="credits credits--hidden" id="creditsModal">
+    <div class="credits__content">
+        <span class="credits__close" id="creditsBtnClose">&times;</span>
+        <figure class="credits__figure">
+            <img src="images/profile.jpg" alt="Profile picture" class="credits__img">
+            <small class="credits__small">Forcowicz</small>
         </figure>
         <h4>Autor: Marek Żywar (Forcowicz)</h4>
-        <p class="credits-icon-author">Ikony stworzone przez <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> dla <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+        <p class="credits__icon-author">Ikony stworzone przez <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> dla <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
     </div>
 </section>
 <script src="includes/js/modal.js"></script>
