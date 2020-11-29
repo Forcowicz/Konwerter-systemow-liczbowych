@@ -1,6 +1,19 @@
+main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-secondary));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  @include respond(phone) {
+    height: 110%;
+  }
+}
+
 .content {
   width: 75rem;
-  height: 50rem;
   background-color: #fff;
   position: absolute;
   top: 50%;
@@ -9,29 +22,67 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 1rem 1.5rem rgba(var(--color-black), .25);
-  padding: 2rem;
+  padding: 3rem 2rem;
   display: flex;
+  flex-direction: column;
 
   @include respond(phone) {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
+    width: 100vw;
+    border-radius: 0;
   }
-}
 
-.heading {
-  text-align: center;
-  display: block;
-  margin-bottom: 2rem;
-  width: 80%;
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -5%);
-
-  @include respond(phone) {
+    &__heading-box {
+      display: block;
+      text-align: center;
       margin-bottom: 3rem;
-  }
+    }
+
+    &__heading {
+      font-size: 2.8rem;
+      margin: 0;
+      text-transform: uppercase;
+      background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-secondary));
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 .5rem 1rem rgba(var(--color-black), .25);
+      -webkit-background-clip: text;
+
+      @include respond(phone) {
+        font-size: 3.2rem;
+      }
+    }
+
+    &__main {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+
+      @include respond(phone) {
+        flex-direction: column;
+      }
+    }
+
+    &__left {
+      display: flex;
+      align-self: stretch;
+      flex: 0 0 50%;
+      margin-right: 3rem;
+      flex-direction: column;
+      align-items: center;
+
+      @include respond(phone) {
+        margin: 0;
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-self: stretch;
+      flex: 1 0;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
 }
 
 .footer {
@@ -44,6 +95,10 @@
     bottom: 0;
     left: 0;
     padding: 1rem 2rem;
+
+    @include respond(phone) {
+      justify-content: center;
+    }
 
       &__link {
         &, &:link, &:visited {
@@ -83,6 +138,15 @@
         opacity: 0;
         transition: all .15s;
 
+        @include respond(phone) {
+          left: 50%;
+          bottom: 50%;
+          transform: translate(-50%, -50%);
+          box-shadow: 0 1rem 1.5rem rgba(var(--color-black), .4);
+          background-image: unset;
+          background-color: rgb(255, 255, 255);
+        }
+
           &--visible {
             visibility: visible;
             opacity: 1;
@@ -94,12 +158,20 @@
             padding: 0;
             margin: 0 0 2rem 0;
             transition: all .15s;
+
+            @include respond(phone) {
+              margin: 0;
+            }
           }
 
           &__item {
             font-size: 1.6rem;
             cursor: pointer;
             text-align: center;
+
+            @include respond(phone) {
+              font-size: 3rem;
+            }
 
               &:hover {
                 background-color: lightgrey;
@@ -112,6 +184,10 @@
               display: block;
               color: var(--color-grey);
               padding: 1rem 4rem;
+
+              @include respond(phone) {
+                padding: 2.4rem 10rem;
+              }
             }
           }
       }

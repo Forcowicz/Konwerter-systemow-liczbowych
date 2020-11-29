@@ -9,11 +9,11 @@
 </div>
 <script src="includes/js/alert.js"></script>
 <section class="content">
-    <div class="heading">
-        <h1>Number systems converter</h1>
+    <div class="content__heading-box">
+        <h1 class="content__heading">Number systems converter</h1>
     </div>
-    <div class="row">
-        <div class="col-1-of-2">
+    <div class="content__main">
+        <div class="content__left">
             <div class="selection">
                 <span class="selection__element" id="selection1">BIN</span>
                 <span class="selection__element" id="selection2">OCT</span>
@@ -28,29 +28,28 @@
                 <h5>Select a system</h5>
             </div>
         </div>
-        <div class="col-1-of-2">
+        <div class="content__right">
             <div class="output__group">
                 <span class="output">
                     <small class="output__label">Binary (BIN)</small>
-                    <span id="outputBin">Enter a number</span>
+                    <span class="output__result" id="outputBin">Enter a number</span>
                 </span>
                 <span class="output">
-                        <small class="output__label">Octal (OCT)</small>
-                        <span id="outputOct">Enter a number</span>
-                    </span>
+                    <small class="output__label">Octal (OCT)</small>
+                    <span class="output__result" id="outputOct">Enter a number</span>
+                </span>
                 <span class="output">
-                        <small class="output__label">Decimal (DEC)</small>
-                        <span id="outputDec">Enter a number</span>
-                    </span>
+                    <small class="output__label">Decimal (DEC)</small>
+                    <span class="output__result" id="outputDec">Enter a number</span>
+                </span>
                 <span class="output">
-                        <small class="output__label">Hexadecimal (HEX)</small>
-                        <span id="outputHex">Enter a number</span>
-                    </span>
+                    <small class="output__label">Hexadecimal (HEX)</small>
+                    <span class="output__result" id="outputHex">Enter a number</span>
+                </span>
             </div>
         </div>
     </div>
 </section>
-</main>
 <footer class="footer">
     <button class="footer__link" id="creditsBtnOpen">Credits</button>
     <button class="footer__link" id="languagesBtnOpen">Lang</button>
@@ -72,5 +71,6 @@
         <p class="credits__icon-author">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> for <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
     </div>
 </section>
+</main>
 <script src="includes/js/modal.js"></script>
 <script src="includes/js/languages/english/converter_en.js"></script>

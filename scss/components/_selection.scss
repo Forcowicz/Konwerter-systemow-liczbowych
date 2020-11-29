@@ -1,10 +1,13 @@
 .selection {
     width: 100%;
     position: relative;
-    top: 8rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
 
         &__element {
             display: inline-block;
@@ -19,6 +22,17 @@
             backface-visibility: hidden;
             box-shadow: 0 .5rem 1rem rgba(var(--color-black), .25);
             transition: all .15s;
+
+            @include respond(phone) {
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.8rem;
+
+                &:not(:first-child) {
+                    margin-top: 1.5rem;
+                }
+            }
 
                 &:hover {
                     transform: scale(1.15);

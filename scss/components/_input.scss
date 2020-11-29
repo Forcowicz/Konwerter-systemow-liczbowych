@@ -11,6 +11,10 @@
     font-size: 1.5rem;
     color: var(--color-primary);
 
+    @include respond(phone) {
+        font-size: 2rem;
+    }
+
         &::placeholder {
             color: var(--color-primary);
             font-size: inherit;
@@ -78,6 +82,10 @@
             opacity: 0;
             pointer-events: none;
 
+                @include respond(phone) {
+                    font-size: 1.2rem;
+                }
+
                 &--focused {
                     transform: translateY(-3.4rem);
                     opacity: 1;
@@ -93,10 +101,10 @@
             margin-bottom: 1.5rem;
             position: relative;
             width: 30rem;
-        }
-}
+            margin-top: 4rem;
 
-#group1 {
-    top: 10rem;
-    margin: 3rem auto 0 auto;
+            @include respond(phone) {
+                width: 100%;
+            }
+        }
 }

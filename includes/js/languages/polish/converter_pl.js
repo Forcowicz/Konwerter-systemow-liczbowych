@@ -31,7 +31,7 @@ function systemSelection(item) {
 
 	item.addEventListener('click', () => {
 		if (selected) {
-			selected.classList.remove('selection__element-active');
+			selected.classList.remove('selection__element--active');
 		}
 
 		if (systemAlert) {
@@ -45,7 +45,7 @@ function systemSelection(item) {
 		input.disabled = false;
 		input.classList.remove('input--disabled');
 		selected = item;
-		selected.classList.add('selection__element-active');
+		selected.classList.add('selection__element--active');
 
 		switch (selected) {
 			case elements[0]:
