@@ -9,6 +9,8 @@ const output1 = document.getElementById('outputBin');
 const output2 = document.getElementById('outputOct');
 const output3 = document.getElementById('outputDec');
 const output4 = document.getElementById('outputHex');
+const bitsNumber = document.getElementById('bitsNumber');
+const bitsInfo = document.getElementById('bitsInfo');
 
 input.disabled = true;
 input.classList.add('input--disabled');
@@ -27,6 +29,8 @@ function systemSelection(item) {
 		output3.textContent = 'Wpisz liczbę';
 		output4.textContent = 'Wpisz liczbę';
 		input.value = '';
+		bitsNumber.textContent = '0';
+		bitsInfo.textContent = 'bitów';
 	};
 
 	item.addEventListener('click', () => {
@@ -92,6 +96,8 @@ function checkInputValue() {
 		arr.forEach(output => {
 			output.textContent = 'Wpisz liczbę';
 		});
+		bitsNumber.textContent = '0';
+		bitsInfo.textContent = 'bitów';
 	};
 	const setDefaultOutput = (outputs) => {
 		if (inputValue) {
@@ -100,6 +106,14 @@ function checkInputValue() {
 				output2.textContent = outputs.output2;
 				output3.textContent = outputs.output3;
 				output4.textContent = outputs.output4;
+				bitsNumber.textContent = outputs.output1.length;
+				if(outputs.output1.length === 1) {
+					bitsInfo.textContent = 'bit';
+				} else if(outputs.output1.length < 5) {
+					bitsInfo.textContent = 'bity';
+				} else {
+					bitsInfo.textContent = 'bitów';
+				}
 			}
 		} else {
 			basicReset([output1, output2, output3, output4]);

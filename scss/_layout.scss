@@ -63,6 +63,7 @@ main {
     }
 
     &__left {
+      position: relative;
       display: flex;
       align-self: stretch;
       flex: 0 0 50%;

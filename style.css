@@ -20,7 +20,7 @@ $breakpoint argument choices:
   outline: none; }
 
 :root {
-  --color-primary: #8500AF;
+  --color-primary: #8500af;
   --color-secondary: #2A3DAF;
   --color-black: 000, 000, 000;
   --color-grey: rgb(77, 76, 76); }
@@ -152,6 +152,7 @@ main {
       .content__main {
         flex-direction: column; } }
   .content__left {
+    position: relative;
     display: flex;
     align-self: stretch;
     flex: 0 0 50%;
@@ -594,3 +595,27 @@ h5 {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, -50%); }
+
+.bits {
+  width: 9rem;
+  height: 9rem;
+  background-color: rgba(133, 0, 175, 0.1);
+  padding: 1.5rem 3rem;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0; }
+  .bits > * {
+    font-weight: inherit;
+    line-height: initial;
+    color: var(--color-primary); }
+  .bits__number {
+    font-size: 3rem;
+    display: inline-block; }
+  .bits__info {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    display: inline-block; }

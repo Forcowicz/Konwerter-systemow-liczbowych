@@ -1,0 +1,30 @@
+.bits {
+    width: 9rem;
+    height: 9rem;
+    background-color: rgba(133, 0, 175, .1);
+    padding: 1.5rem 3rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+
+    & > * {
+        font-weight: inherit;
+        line-height: initial;
+        color: var(--color-primary);
+    }
+    
+        &__number {
+            font-size: 3rem;
+            display: inline-block;
+        }
+
+        &__info {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+}
