@@ -11,6 +11,13 @@
     position: absolute;
     bottom: 0;
 
+    @include respond(phone) {
+        position: relative;
+        align-self: flex-end;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
     & > * {
         font-weight: inherit;
         line-height: initial;
