@@ -79,12 +79,12 @@ function checkInputValue() {
 	const inputValue = input.value.trim();
 	const addInputError = () => {
 		input.classList.add('input--error');
-		label.classList.add('label--error');
+		label.classList.add('input__label--error');
 		label.innerHTML = 'Wpisz liczbę w <b>prawidłowym formacie!</b>';
 	};
 	const removeInputError = () => {
 		input.classList.remove('input--error');
-		label.classList.remove('label--error');
+		label.classList.remove('input__label--error');
 		label.textContent = labelText;
 		accepted = true;
 	};
