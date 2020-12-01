@@ -29,7 +29,11 @@ function languageCondition($argumentTrue, $argumentFalse) {
     $userSession = $user->getSessionId();
     $userIp = $user->getUserIp();
     $userDevice = $user->getUserDevice();
-    $query = mysqli_query($conn, "INSERT INTO stats (session, language, date, ip, device) VALUES('$userSession', '$userBrowserLanguage', '$userDate', '$userIp', '$userDevice')");
+
+    $getSessions = mysqli_query($conn, "SELECT * FROM stats WHERE session = '$userSession'");
+    if(mysqli_num_rows($getSessions) === 0) {
+        mysqli_query($conn, "INSERT INTO stats (session, language, date, ip, device) VALUES('$userSession', '$userBrowserLanguage', '$userDate', '$userIp', '$userDevice')");
+    }
 
     if(isset($_GET['lang'])) {
         if($_GET['lang'] === 'pl') {
