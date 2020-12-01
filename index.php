@@ -1,5 +1,7 @@
 <?php
+include_once("includes/config.php");
 include_once("includes/language_check.php");
+include_once("includes/classes/User.php");
 
 function languageCondition($argumentTrue, $argumentFalse) {
     global $browserLanguage;
@@ -21,6 +23,13 @@ function languageCondition($argumentTrue, $argumentFalse) {
 </head>
 <body>
     <?php
+    $user = new User($conn);
+    $userBrowserLanguage = $user->getBrowserLanguage();
+    $userDate = $user->getDate();
+    $userSession = $user->getSessionId();
+    $userIp = $user->getUserIp();
+    $userDevice = $user->getUserDevice();
+    $query = mysqli_query($conn, "INSERT INTO stats (session, language, date, ip, device) VALUES('$userSession', '$userBrowserLanguage', '$userDate', '$userIp', '$userDevice')");
 
     if(isset($_GET['lang'])) {
         if($_GET['lang'] === 'pl') {

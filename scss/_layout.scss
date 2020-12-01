@@ -8,7 +8,7 @@ main {
   background-size: 100%;
 
   @include respond(phone) {
-    height: 110%;
+    height: 120%;
   }
 }
 
