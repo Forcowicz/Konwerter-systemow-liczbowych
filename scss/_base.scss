@@ -60,3 +60,20 @@ input[type=number] {
     -moz-appearance: textfield;
     appearance: none;
 }
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1) translate(-50%, -10%);
+        transform-origin: left;
+    }
+
+    60% {
+        transform: scale(1.15) translate(-50%, -10%);
+        transform-origin: left;
+    }
+
+    100% {
+        transform: scale(0) translate(-50%, -10%);
+        transform-origin: left;
+    }
+}

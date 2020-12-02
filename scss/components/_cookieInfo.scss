@@ -1,0 +1,62 @@
+.cookieInfo {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, -10%);
+  width: 50%;
+  height: 10rem;
+  background-color: #fff;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 0 0 5rem rgba(133, 0, 175, .5);
+  display: flex;
+  text-align: center;
+
+  @include respond(phone) {
+    width: 90%;
+    height: 15%;
+  }
+
+    &__paragraph {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      flex: 1 0;
+      padding: 1rem;
+      hyphens: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    &__button {
+      display: block;
+      padding: 1rem 2rem;
+      border: none;
+      outline: none;
+      background-image: linear-gradient(to right, var(--color-primary), darken(rgb(133, 0, 175), 5%));
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .15s;
+      background-size: 150%;
+      background-position-x: right;
+      height: 100%;
+      flex: 0 0 18%;
+
+        &:hover {
+          background-position-x: left;
+        }
+    }
+
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+      animation-name: zoomInOut;
+      animation-duration: 1s;
+    }
+
+    &--animation {
+      animation: zoomInOut .8s ease-in-out;
+    }
+}

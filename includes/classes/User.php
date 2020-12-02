@@ -11,7 +11,7 @@ class User {
     }
 
     public function getDate() {
-        return date('Y-m-d h:i:s');
+        return date('Y-m-d H:i:s');
     }
 
     public function getSessionId() {
