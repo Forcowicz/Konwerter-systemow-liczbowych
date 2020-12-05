@@ -5,10 +5,32 @@
 <main>
 <script src="includes/js/alert.js"></script>
 <section class="content">
+    <div class="help__button" id="helpButton">
+        <svg class="help__icon" id="helpIcon">
+            <use xlink:href="images/icons/sprite.svg#question-mark"></use>
+        </svg>
+    </div>
     <div class="content__heading-box">
         <h1 class="content__heading">Konwerter systemów liczbowych</h1>
     </div>
     <div class="content__main">
+        <div class="help help--hidden" id="helpBox">
+            <div class="help__content">
+                <h2 class="help__heading">Jak tego używać?</h2>
+                <p class="help__paragraph">
+                    Prosty konwerter systemów liczbowych pozwala na przeliczanie liczb na systemy dwójkowy (binarny),
+                    ósemkowy, dziesiętny oraz szesnastkowy. <br>
+                    Obecnie akceptuje jedynie liczby całkowite dodatnie.
+                </p>
+                <div class="help__list-container">
+                    <ol class="help__list">
+                        <li class="help__item">Wybierz system, z którego chcesz przeliczyć liczbę</li>
+                        <li class="help__item">Wpisz liczbę w polu tekstowym</li>
+                        <li class="help__item">Odczytaj wynik w polach po prawej stronie!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
         <div class="content__left">
             <div class="selection">
                 <span class="selection__element" id="selection1">BIN</span>
@@ -68,7 +90,7 @@
             <small class="credits__small">Forcowicz</small>
         </figure>
         <h4>Autor: Marek Żywar (Forcowicz)</h4>
-        <p class="credits__icon-author">Ikony stworzone przez <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> dla <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+        <p class="credits__icon-author">Ikony stworzone przez <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> oraz <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> dla <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
     </div>
 </section>
 </main>

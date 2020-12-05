@@ -5,11 +5,33 @@
 <main>
 <script src="includes/js/alert.js"></script>
 <section class="content">
+    <div class="help__button" id="helpButton">
+        <svg class="help__icon" id="helpIcon">
+            <use xlink:href="images/icons/sprite.svg#question-mark"></use>
+        </svg>
+    </div>
     <div class="content__heading-box">
         <h1 class="content__heading">Number systems converter</h1>
     </div>
     <div class="content__main">
+        <div class="help help--hidden" id="helpBox">
+            <div class="help__content">
+                <h2 class="help__heading">How to use?</h2>
+                <p class="help__paragraph">
+                    Simple number systems converter calculates a number binary, octal, decimal and hexadecimal systems.
+                    Currently accepts only integers and positive numbers.
+                </p>
+                <div class="help__list-container">
+                    <ol class="help__list">
+                        <li class="help__item">Select a system, from which you want to convert the number</li>
+                        <li class="help__item">Enter the number in the text field</li>
+                        <li class="help__item">Read the result on the right panel!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
         <div class="content__left">
+            <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
             <div class="selection">
                 <span class="selection__element" id="selection1">BIN</span>
                 <span class="selection__element" id="selection2">OCT</span>
@@ -68,7 +90,7 @@
             <small class="credits__small">Forcowicz</small>
         </figure>
         <h4>Author: Marek Żywar (Forcowicz)</h4>
-        <p class="credits__icon-author">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> for <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+        <p class="credits__icon-author">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> for <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
     </div>
 </section>
 </main>

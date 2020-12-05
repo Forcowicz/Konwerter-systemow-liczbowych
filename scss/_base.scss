@@ -8,7 +8,7 @@
 
 :root {
     --color-primary: #8500af;
-    --color-secondary: #2A3DAF;
+    --color-secondary: #2a3daf;
     --color-black: 000, 000, 000;
     --color-grey: rgb(77, 76, 76);
 }
@@ -68,7 +68,7 @@ input[type=number] {
     }
 
     75% {
-        transform: scale(1.25) translate(-50%, -10%);
+        transform: scale(1.15) translate(-50%, -10%);
         transform-origin: left;
     }
 

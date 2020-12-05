@@ -34,3 +34,13 @@ languagesPopup.addEventListener('mouseenter', () => {
 languagesPopup.addEventListener('mouseleave', () => {
     languagesPopup.className = "footer__languages";
 });
+
+// HELP
+const helpBtn = document.getElementById('helpButton');
+const helpBox = document.getElementById('helpBox');
+const helpIcon = document.getElementById('helpIcon');
+helpBtn.addEventListener('click', () => {
+    helpBox.classList.toggle('help--hidden');
+    helpBtn.classList.toggle('help__button--active');
+    helpIcon.classList.toggle('help__icon--active');
+});
