@@ -73,6 +73,11 @@
     </div>
 </section>
 <footer class="footer">
+    <div class="menu__button" id="menuBtnOpen">
+        <svg class="menu__icon">
+            <use xlink:href="images/icons/sprite.svg#list"></use>
+        </svg>
+    </div>
     <button class="footer__link" id="creditsBtnOpen">Credits</button>
     <button class="footer__link" id="languagesBtnOpen">Lang</button>
     <div class="footer__languages" id="languagesPopup">
@@ -82,17 +87,32 @@
         </ul>
     </div>
 </footer>
-<section class="credits credits--hidden" id="creditsModal">
-    <div class="credits__content">
-        <span class="credits__close" id="creditsBtnClose">&times;</span>
-        <figure class="credits__figure">
-            <img src="images/profile.jpg" alt="Profile picture" class="credits__img">
-            <small class="credits__small">Forcowicz</small>
-        </figure>
-        <h4>Author: Marek Żywar (Forcowicz)</h4>
-        <p class="credits__icon-author">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> for <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+<section class="menu menu--hidden" id="menu" oncontextmenu="return false;">
+    <div class="menu__content">
+        <ul class="menu__list" id="menuList">
+            <li class="menu__item">Rejestracja</li>
+            <li class="menu__item">Logowanie</li>
+            <li class="menu__item">Kontakt</li>
+            <li class="menu__item">Autorzy</li>
+        </ul>
+
+        <div class="credits credits--hidden" id="credits">
+            <span class="credits__close" id="creditsBtnClose">&times;</span>
+            <figure class="credits__figure">
+                <img src="images/profile.jpg" alt="Profile picture" class="credits__img">
+                <small class="credits__small">Forcowicz</small>
+            </figure>
+            <h4>Author: Marek Żywar (Forcowicz)</h4>
+            <p class="credits__icon-author">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> for <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+        </div>
+
+
     </div>
+    <small class="menu__caption">
+        Tip: Right click to turn off the menu
+    </small>
 </section>
 </main>
 <script src="includes/js/modal.js"></script>
+<script src="includes/js/menu.js"></script>
 <script src="includes/js/languages/english/converter_en.js"></script>
