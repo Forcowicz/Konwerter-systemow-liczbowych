@@ -171,6 +171,7 @@ main {
             font-size: 1.6rem;
             cursor: pointer;
             text-align: center;
+            text-transform: uppercase;
 
             @include respond(phone) {
               font-size: 3rem;

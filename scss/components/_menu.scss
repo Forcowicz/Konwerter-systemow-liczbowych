@@ -25,12 +25,18 @@
     &__button {
       display: inline-block;
       margin-right: 2rem;
+      cursor: pointer;
+
+        &:hover > .menu__icon {
+          fill: lightgrey;
+        }
     }
 
     &__icon {
       width: 3rem;
       height: 3rem;
       fill: #fff;
+      transition: all .15s;
     }
 
     &__list {

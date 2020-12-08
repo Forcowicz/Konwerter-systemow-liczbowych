@@ -19,6 +19,10 @@
             color: var(--color-primary);
             font-size: inherit;
             font-family: inherit;
+
+            @include respond(phone) {
+                font-size: 1.5rem;
+            }
         }
 
         &:focus {
@@ -28,12 +32,6 @@
             
                 &::placeholder {
                     color: var(--color-secondary);
-                }
-
-                & + .input__label {
-                    transform: translateY(-3.4rem);
-                    opacity: 1;
-                    visibility: visible;
                 }
         }
 
@@ -106,5 +104,57 @@
             @include respond(phone) {
                 width: 100%;
             }
+
+            &--max-width {
+                width: 100%;
+            }
         }
+
+        &__submit {
+            border: none;
+            background-color: var(--color-primary);
+            font-size: 1.8rem;
+            padding: 1rem 2rem;
+            color: white;
+            font-family: inherit;
+            margin-top: 2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .15s;
+
+                &:active, &:focus {
+                    outline: none;
+                    border: none;
+                }
+
+                &:hover {
+                    background-color: lighten(rgb(133, 0, 175), 10%);
+                }
+        }
+
+        &__wrapper {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        &__wrapper-left {
+            display: inline-block;
+            flex: 0 0 50%;
+            padding-right: 1rem;
+        }
+
+        &__wrapper-right {
+            display: inline-block;
+            flex: 1;
+            padding-left: 1rem;
+        }
+}
+
+.input:focus + .input__label {
+    transform: translateY(-3.4rem);
+    opacity: 1;
+    visibility: visible;
 }

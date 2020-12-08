@@ -21,20 +21,6 @@
             opacity: 0;
         }
 
-        &__close {
-            position: absolute;
-            top: -.4rem;
-            right: 1rem;
-            font-size: 3rem;
-            cursor: pointer;
-            color: inherit;
-            transition: all .15s;
-
-                &:hover {
-                    color: var(--color-secondary);
-                }
-        }
-
         &__icon-author {
             text-align: center;
             display: inline-block;

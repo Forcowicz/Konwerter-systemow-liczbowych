@@ -311,6 +311,7 @@ main {
   font-size: 1.6rem;
   cursor: pointer;
   text-align: center;
+  text-transform: uppercase;
 }
 @media only screen and (max-width: 38.75em) {
   .footer__languages__item {
@@ -481,6 +482,107 @@ h5 {
   }
 }
 
+.closeBtn {
+  position: absolute;
+  top: -0.4rem;
+  right: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  color: inherit;
+  transition: all 0.15s;
+}
+.closeBtn:hover {
+  color: var(--color-secondary);
+}
+
+.textarea {
+  border-bottom: 3px solid var(--color-primary);
+  background-color: #f0f0f0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 1rem 1rem 0.75rem 1rem;
+  width: 100%;
+  transition: all 0.15s;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  resize: none;
+}
+@media only screen and (max-width: 38.75em) {
+  .textarea {
+    font-size: 2rem;
+  }
+}
+.textarea::placeholder {
+  color: var(--color-primary);
+  font-size: inherit;
+  font-family: inherit;
+}
+@media only screen and (max-width: 38.75em) {
+  .textarea::placeholder {
+    font-size: 1.6rem;
+  }
+}
+.textarea:focus {
+  border-bottom-color: var(--color-secondary);
+  color: var(--color-secondary);
+  background-color: #f7f7f7;
+}
+.textarea:focus::placeholder {
+  color: var(--color-secondary);
+}
+.textarea--focused {
+  border-bottom-color: var(--color-secondary);
+  color: var(--color-secondary);
+  background-color: #f7f7f7;
+}
+.textarea--disabled {
+  border-bottom-color: grey;
+}
+.textarea--disabled::placeholder {
+  color: var(--color-grey);
+}
+.textarea--error {
+  border-bottom-color: #dd1c1c;
+  background-color: rgba(221, 28, 28, 0.2);
+  color: #dd1c1c;
+}
+.textarea--error::placeholder {
+  color: #dd1c1c;
+}
+.textarea--error:focus {
+  color: #dd1c1c;
+  border-bottom-color: #dd1c1c;
+  background-color: rgba(221, 28, 28, 0.2);
+}
+.textarea--error:focus::placeholder {
+  color: #dd1c1c;
+}
+.textarea__label {
+  position: absolute;
+  top: 1.4rem;
+  left: 1.2rem;
+  font-size: 1.2rem;
+  transition: all 0.15s;
+  color: var(--color-secondary);
+  opacity: 0;
+  pointer-events: none;
+}
+@media only screen and (max-width: 38.75em) {
+  .textarea__label {
+    font-size: 1.2rem;
+  }
+}
+.textarea__label--error {
+  color: #dd1c1c;
+}
+.textarea:focus + .textarea__label {
+  transform: translateY(-3.4rem);
+  opacity: 1;
+  pointer-events: initial;
+}
+
 .input {
   border-bottom: 3px solid var(--color-primary);
   background-color: #f0f0f0;
@@ -504,6 +606,11 @@ h5 {
   font-size: inherit;
   font-family: inherit;
 }
+@media only screen and (max-width: 38.75em) {
+  .input::placeholder {
+    font-size: 1.5rem;
+  }
+}
 .input:focus {
   border-bottom-color: var(--color-secondary);
   color: var(--color-secondary);
@@ -511,11 +618,6 @@ h5 {
 }
 .input:focus::placeholder {
   color: var(--color-secondary);
-}
-.input:focus + .input__label {
-  transform: translateY(-3.4rem);
-  opacity: 1;
-  visibility: visible;
 }
 .input--focused {
   border-bottom-color: var(--color-secondary);
@@ -577,6 +679,51 @@ h5 {
   .input__group {
     width: 100%;
   }
+}
+.input__group--max-width {
+  width: 100%;
+}
+.input__submit {
+  border: none;
+  background-color: var(--color-primary);
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  color: white;
+  font-family: inherit;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.input__submit:active, .input__submit:focus {
+  outline: none;
+  border: none;
+}
+.input__submit:hover {
+  background-color: #ac00e2;
+}
+.input__wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.input__wrapper-left {
+  display: inline-block;
+  flex: 0 0 50%;
+  padding-right: 1rem;
+}
+.input__wrapper-right {
+  display: inline-block;
+  flex: 1;
+  padding-left: 1rem;
+}
+
+.input:focus + .input__label {
+  transform: translateY(-3.4rem);
+  opacity: 1;
+  visibility: visible;
 }
 
 .btn {
@@ -670,18 +817,6 @@ h5 {
   display: none;
   visibility: hidden;
   opacity: 0;
-}
-.credits__close {
-  position: absolute;
-  top: -0.4rem;
-  right: 1rem;
-  font-size: 3rem;
-  cursor: pointer;
-  color: inherit;
-  transition: all 0.15s;
-}
-.credits__close:hover {
-  color: var(--color-secondary);
 }
 .credits__icon-author {
   text-align: center;
@@ -966,11 +1101,16 @@ h5 {
 .menu__button {
   display: inline-block;
   margin-right: 2rem;
+  cursor: pointer;
+}
+.menu__button:hover > .menu__icon {
+  fill: lightgrey;
 }
 .menu__icon {
   width: 3rem;
   height: 3rem;
   fill: #fff;
+  transition: all 0.15s;
 }
 .menu__list {
   display: flex;
@@ -1004,6 +1144,104 @@ h5 {
   transform: translateX(-50%);
   font-size: 1.2rem;
   color: #fff;
+}
+
+.contact {
+  display: block;
+  padding: 2rem;
+  background-color: white;
+  position: relative;
+}
+@media only screen and (max-width: 56.25em) {
+  .contact {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 38.75em) {
+  .contact {
+    width: 90vw;
+  }
+}
+.contact--hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.contact > input {
+  width: 100%;
+}
+
+.register {
+  display: block;
+  background-color: #fff;
+  width: 50vw;
+  padding: 2rem;
+  position: relative;
+}
+@media only screen and (max-width: 56.25em) {
+  .register {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 38.75em) {
+  .register {
+    width: 90vw;
+  }
+}
+.register--hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.register > input {
+  width: 100%;
+}
+
+.login {
+  display: block;
+  background-color: #fff;
+  padding: 2rem;
+  position: relative;
+}
+@media only screen and (max-width: 56.25em) {
+  .login {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 38.75em) {
+  .login {
+    width: 90vw;
+  }
+}
+.login--hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.login > input {
+  width: 100%;
+}
+
+.menuComponentHeading {
+  display: block;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  background-image: linear-gradient(to right, var(--color-primary), #cd30ff);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.menuComponentInfo {
+  font-size: 1.6rem;
+  color: var(--color-grey);
+  display: block;
+  margin: 0;
+  text-align: center;
+  hyphens: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
