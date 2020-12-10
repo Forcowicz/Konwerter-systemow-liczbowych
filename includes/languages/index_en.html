@@ -31,6 +31,7 @@
             </div>
         </div>
         <div class="content__left">
+            <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
             <div class="selection">
                 <span class="selection__element" id="selection1">BIN</span>
                 <span class="selection__element" id="selection2">OCT</span>
@@ -89,14 +90,14 @@
 <section class="menu menu--hidden" id="menu" oncontextmenu="return false;">
     <div class="menu__content">
         <ul class="menu__list" id="menuList">
-            <li class="menu__item">Register</li>
-            <li class="menu__item">Login</li>
-            <li class="menu__item">Contact</li>
-            <li class="menu__item">Authors</li>
+            <li class="menu__item">Rejestracja</li>
+            <li class="menu__item">Logowanie</li>
+            <li class="menu__item">Kontakt</li>
+            <li class="menu__item">Autorzy</li>
         </ul>
 
         <div class="credits credits--hidden" id="credits">
-            <span class="closeBtn" id="creditsBtnClose">&times;</span>
+            <span class="credits__close" id="creditsBtnClose">&times;</span>
             <figure class="credits__figure">
                 <img src="images/profile.jpg" alt="Profile picture" class="credits__img">
                 <small class="credits__small">Forcowicz</small>
@@ -105,87 +106,6 @@
             <p class="credits__icon-author">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> for <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
         </div>
 
-<!-- TODO: Add form method and contact script in PHP -->
-        <form class="contact contact--hidden" id="contact">
-            <h3 class="menuComponentHeading">Contact me</h3>
-            <p class="menuComponentInfo">
-                Here you can write a message. Remember to be accurate with your question or problem. I will get back to you on e-mail within 24 hours.
-            </p>
-            <span class="closeBtn" id="contactBtnClose">&times;</span>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="email" id="contactEmail" placeholder="Enter your e-mail address" name="contactEmail" required>
-                <label class="input__label" for="contactEmail">Enter your e-mail address</label>
-            </div>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="text" id="contactFirstName" placeholder="Enter your first name" name="contactFirstName" required>
-                <label class="input__label" for="contactFirstName">Enter your first name</label>
-            </div>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="text" id="contactLastName" placeholder="Enter your last name" name="contactLastName" required>
-                <label class="input__label" for="contactLastName">Enter your last name</label>
-            </div>
-            <div class="input__group input__group--max-width">
-                <textarea class="textarea" id="contactMessage" name="contactMessage" rows="4" cols="50" minlength="25" maxlength="180" placeholder="Enter your message"></textarea>
-                <label class="textarea__label" for="contactMessage">Enter your message</label>
-            </div>
-            <input class="input__submit" type="submit" name="contactSubmit">
-        </form>
-
-        <form class="register register--hidden" id="register">
-            <h3 class="menuComponentHeading">Register</h3>
-            <p class="menuComponentInfo">
-                Here you can create an account.
-            </p>
-            <span class="closeBtn" id="registerBtnClose">&times;</span>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="text" placeholder="Enter desired username" name="registerNick" id="registerNick" minlength="3" maxlength="16" required>
-                <label class="input__label" for="registerNick">Enter desired username</label>
-            </div>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="email" placeholder="Enter your e-mail" name="registerEmail" id="registerEmail" required>
-                <label class="input__label" for="registerEmail">Enter your e-mail</label>
-            </div>
-            <div class="input__wrapper">
-                <div class="input__wrapper-left">
-                    <div class="input__group input__group--max-width">
-                        <input class="input" type="text" placeholder="Enter your first name" name="registerFirstName" id="registerFirstName" required>
-                        <label class="input__label" for="registerFirstName">Enter your first name</label>
-                    </div>
-                </div>
-                <div class="input__wrapper-right">
-                    <div class="input__group input__group--max-width">
-                        <input class="input" type="text" placeholder="Enter your last name (optional)" name="registerLastName" id="registerLastName">
-                        <label class="input__label" for="registerLastName">Enter your last name (optional)</label>
-                    </div>
-                </div>
-            </div>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="password" placeholder="Enter desired password" name="registerPassword" id="registerPassword" required>
-                <label class="input__label" for="registerPassword">Enter desired password</label>
-            </div>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="password" placeholder="Repeat desired password" name="registerPasswordRepeat" id="registerPasswordRepeat" required>
-                <label class="input__label" for="registerPasswordRepeat">Repeat desired password</label>
-            </div>
-            <input class="input__submit" type="submit" id="registerSubmit">
-        </form>
-
-        <form class="login login--hidden" id="login">
-            <h3 class="menuComponentHeading">Login</h3>
-            <p class="menuComponentInfo">
-                Here you can login to your account.
-            </p>
-            <span class="closeBtn" id="loginBtnClose">&times;</span>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="text" placeholder="Enter your username" name="loginNick" id="loginNick" required>
-                <label class="input__label" for="loginNick">Enter your username</label>
-            </div>
-            <div class="input__group input__group--max-width">
-                <input class="input" type="text" placeholder="Enter your password" name="loginPassword" id="loginPassword" required>
-                <label class="input__label" for="loginPassword">Enter your password</label>
-            </div>
-            <input class="input__submit" type="submit" id="loginSubmit">
-        </form>
 
     </div>
     <small class="menu__caption">
