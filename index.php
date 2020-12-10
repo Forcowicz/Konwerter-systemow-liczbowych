@@ -2,7 +2,6 @@
 include_once("includes/config.php");
 include_once("includes/language_check.php");
 include_once("includes/classes/User.php");
-include_once("includes/contact_handler.php");
 
 $user = new User($conn);
 $userBrowserLanguage = $user->getBrowserLanguage();
