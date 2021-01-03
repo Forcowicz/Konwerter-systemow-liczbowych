@@ -1,5 +1,4 @@
 'use strict';
-let selected;
 
 const elements = document.querySelectorAll('.selection__element');
 const label = document.getElementById('inputLabel');
@@ -18,9 +17,14 @@ input.classList.add('input--disabled');
 input.addEventListener('keyup', checkInputValue);
 input.addEventListener('focusout', checkInputValue);
 
-let labelText;
+let labelText, selected;
 
 elements.forEach(systemSelection);
+
+const bitsReset = function () {
+	bitsNumber.textContent = '0';
+	bitsInfo.textContent = 'bits';
+};
 
 function systemSelection(item) {
 	const outputReset = () => {
@@ -29,8 +33,7 @@ function systemSelection(item) {
 		output3.textContent = 'Enter a number';
 		output4.textContent = 'Enter a number';
 		input.value = '';
-		bitsNumber.textContent = '0';
-		bitsInfo.textContent = 'bits';
+		bitsReset();
 	};
 
 	item.addEventListener('click', () => {
@@ -92,22 +95,21 @@ function checkInputValue() {
 		label.textContent = labelText;
 		accepted = true;
 	};
-	const basicReset = (arr) => {
+	const basicReset = arr => {
 		arr.forEach(output => {
 			output.textContent = 'Enter a number';
 		});
-		bitsNumber.textContent = '0';
-		bitsInfo.textContent = 'bits';
+		bitsReset();
 	};
-	const setDefaultOutput = (outputs) => {
+	const setDefaultOutput = ({outputBin, outputOct, outputDec, outputHex}) => {
 		if (inputValue) {
 			if (accepted) {
-				output1.textContent = outputs.output1;
-				output2.textContent = outputs.output2;
-				output3.textContent = outputs.output3;
-				output4.textContent = outputs.output4;
-				bitsNumber.textContent = outputs.output1.length;
-				if(outputs.output1.length === 1) {
+				output1.textContent = outputBin;
+				output2.textContent = outputOct;
+				output3.textContent = outputDec;
+				output4.textContent = outputHex;
+				bitsNumber.textContent = outputBin.length;
+				if(outputBin.length === 1) {
 					bitsInfo.textContent = 'bit';
 				} else {
 					bitsInfo.textContent = 'bits';
@@ -314,7 +316,7 @@ function convert(input, system) {
 				break;
 			case 16:
 			case '16':
-				outputArray.push('10')
+				outputArray.push('10');
 				break;
 			default:
 				outputArray.push(number);
@@ -340,7 +342,7 @@ function convert(input, system) {
 				outputNumber += outputArray[i];
 			}
 		}
-		return {output1: str, output2: convertToOct(outputNumber), output3: outputNumber, output4: convertToHex(outputNumber)};
+		return {outputBin: str, outputOct: convertToOct(outputNumber), outputDec: outputNumber, outputHex: convertToHex(outputNumber)};
 
 	} else if(system === 'oct') {
 		const localArray = inputArray.reverse();
@@ -353,7 +355,7 @@ function convert(input, system) {
 			}
 		}
 		
-		return {output1: convertToBin(outputNumber), output2: str, output3: outputNumber, output4: convertToHex(outputNumber)};
+		return {outputBin: convertToBin(outputNumber), outputOct: str, outputDec: outputNumber, outputHex: convertToHex(outputNumber)};
 
 	} else if(system === 'hex') {
 		const localArray = inputArray.reverse();
@@ -380,9 +382,9 @@ function convert(input, system) {
 				outputNumber += outputArray[i];
 			}
 		}
-		return {output1: convertHexToBin(str), output2: convertToOct(outputNumber), output3: outputNumber, output4: str}; 
+		return {outputBin: convertHexToBin(str), outputOct: convertToOct(outputNumber), outputDec: outputNumber, outputHex: str}; 
 	} else if(system === 'dec') {
 		outputNumber = input;
-		return {output1: convertToBin(outputNumber), output2: convertToOct(outputNumber), output3: outputNumber, output4: convertToHex(outputNumber)};
+		return {outputBin: convertToBin(outputNumber), outputOct: convertToOct(outputNumber), outputDec: outputNumber, outputHex: convertToHex(outputNumber)};
 	}
 }
